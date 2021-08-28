@@ -60,7 +60,7 @@ l8=""
 
 # Get the window manager
 wm=$(xprop -root | sed -n '/^_NET_WM_NAME/p' | sed 's/^.*= //;s/"//g')
-[ $wm == "" ] && wm=$XDG_CURRENT_DESKTOP
+[ -e $wm ] && wm=$XDG_CURRENT_DESKTOP
 
 echo -e "$l1"
 echo -e "$l2 User: ${YELLOW}$USER@$hostname${NC}"
