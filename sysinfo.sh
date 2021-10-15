@@ -39,14 +39,15 @@ l7="${CYAN} /_-''    ''-_\\ ${NC}"
 l8=""
 
 [ "$distro" == "Fedora" ] && packages=$(rpm -qa | wc -l) &&
-l1="${BLUE}        ____ ${NC}_     " &&
-l2="${BLUE}       |  __|${NC} \\    " &&
-l3="${BLUE}       | |   ${NC}\\ \\   " &&
-l4="   __${BLUE} _| |_ ${NC}_/ /   " &&
-l5="  / _${BLUE}|_   _|${NC}__/    " &&
-l6=" / / ${BLUE}  | |         ${NC}" &&
-l7=" \\ \\ ${BLUE}__| |         ${NC}" &&
-l8="  \\_${BLUE}|____|         ${NC}"
+l1="${BLUE}    %%%%%%%%%%%%%     ${NC}" &&
+l2="${BLUE}  %%%%%%%${NC}dffffffb${BLUE}%%   ${NC}" &&
+l3="${BLUE} %%%%%%%%${NC}lfl${BLUE}%%%${NC}bfb${BLUE}%%% ${NC}" &&
+l4="${BLUE}%%%%%%%%%${NC}lfl${BLUE}%%%%%%%%%%${NC}" &&
+l5="${BLUE}%%%%${NC}dfffflfffl${BLUE}%%%%%%%%${NC}" &&
+l6="${BLUE}%%%${NC}dfP${BLUE}%%%${NC}lfl${BLUE}%%%%%%%%%%${NC}" &&
+l7="${BLUE} %%${NC}qfb${BLUE}%%%${NC}lfl${BLUE}%%%%%%%%% ${NC}" &&
+l8="${BLUE}  %%${NC}qffffffP${BLUE}%%%%%%%   ${NC}" &&
+l9="${BLUE}    %%%%%%%%%%%%%      ${NC}"
 
 [ "$distro" == "Ubuntu" ] && packages=$(dpkg-query -l | wc -l) &&
 l1="${ORANGE}           _   ${NC}" &&
@@ -70,5 +71,6 @@ echo -e "$l5 Packages: ${YELLOW}$packages${NC}"
 echo -e "$l6 Window Manager: ${YELLOW}$wm${NC}"
 echo -e "$l7"
 echo -e "$l8"
+[ -n "$l9" ] && echo -e "$l9"
 
 exit 0
