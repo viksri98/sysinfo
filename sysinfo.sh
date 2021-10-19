@@ -63,13 +63,16 @@ l8=""
 wm=$(xprop -root | sed -n '/^_NET_WM_NAME/p' | sed 's/^.*= //;s/"//g')
 [ -e $wm ] && wm=$XDG_CURRENT_DESKTOP
 
+# Get the free RAM
+ram=$(free -h | awk '{print $4}' | sed -n '2p' )
+
 echo -e "$l1"
 echo -e "$l2 User: ${YELLOW}$USER@$hostname${NC}"
 echo -e "$l3 OS: ${YELLOW}$distro${NC} on ${YELLOW}Linux-$kernel${NC}"
 echo -e "$l4 Uptime: ${YELLOW}${d}d${h}h${m}m${s}s${NC}"
 echo -e "$l5 Packages: ${YELLOW}$packages${NC}"
 echo -e "$l6 Window Manager: ${YELLOW}$wm${NC}"
-echo -e "$l7"
+echo -e "$l7 RAM free: ${YELLOW}$ram${NC}"
 echo -e "$l8"
 [ -n "$l9" ] && echo -e "$l9"
 
