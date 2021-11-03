@@ -38,7 +38,7 @@ l6="${CYAN}  /   |  |   \\  ${NC}" &&
 l7="${CYAN} /_-''    ''-_\\ ${NC}"
 l8=""
 
-[ "$distro" == "Fedora" ] && packages=$(rpm -qa | wc -l) &&
+[ "$distro" == "Fedora Linux" ] && packages=$( dnf list installed | wc -l) &&
 l1="${BLUE}    %%%%%%%%%%%%%     ${NC}" &&
 l2="${BLUE}  %%%%%%%${NC}dffffffb${BLUE}%%   ${NC}" &&
 l3="${BLUE} %%%%%%%%${NC}lfl${BLUE}%%%${NC}bfb${BLUE}%%% ${NC}" &&
